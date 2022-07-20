@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FormLogin"
+    android:background="@drawable/home_base">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:src="@drawable/logopng"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="Logo"
+        ></ImageView>
+
+    <EditText
+        android:id="@+id/inputlogin"
+        style="@style/input_text"
+        android:hint="Login"
+        android:maxLength="20"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/inputsenha"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"></EditText>
+
+    <EditText
+        android:id="@+id/inputsenha"
+        style="@style/input_text"
+        android:hint="Senha"
+        android:maxLength="20"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/btn_login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"></EditText>
+
+    <Button
+        android:id="@+id/btn_login"
+        style="@style/button_style"
+        android:layout_marginBottom="144dp"
+        android:text="Acessar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        android:textAllCaps="false"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/text_sem_conta"
+        android:layout_width="122dp"
+        android:layout_height="21dp"
+        android:layout_marginTop="75dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginBottom="48dp"
+        android:clickable="true"
+        android:text="Não possui conta?"
+        android:textColor="@color/gray"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_login" />
+
+    <TextView
+        android:id="@+id/text_esqueceu_senha"
+        android:layout_width="122dp"
+        android:layout_height="21dp"
+        android:layout_marginTop="75dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="48dp"
+        android:clickable="true"
+        android:text="Esqueceu a senha"
+        android:textColor="@color/gray"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/text_sem_conta"
+        app:layout_constraintHorizontal_bias="0.955"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_login" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

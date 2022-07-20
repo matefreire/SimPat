@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="ContainerComponents">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">250dp</item>
+        <item name="background">@drawable/rounded_pink_style</item>
+    </style>
+
+    <style name="input_text">
+        <item name="android:background">@drawable/rounded_gray_style</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="android:layout_width">280dp</item>
+        <item name="android:padding">20dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:layout_marginBottom">20dp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textColorHint">@color/darkBlue</item>
+    </style>
+
+    <style name="button_style">
+        <item name="android:background">@drawable/rounded_pink_style</item>
+        <item name="colorAccent">@color/pink</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="android:layout_width">280dp</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:layout_marginBottom">20dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+</resources>
