@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "861764388935",
+    "project_id": "simpat-1e4b8",
+    "storage_bucket": "simpat-1e4b8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:861764388935:android:7d6e3ff5b11789c5e18962",
+        "android_client_info": {
+          "package_name": "br.com.ufmt.simpat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "861764388935-kn9koe3728gbq32tbpn2qv2satklala0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBOUv6V7sNkLby-yY63qMHPKAnCXZnIYt8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "861764388935-kn9koe3728gbq32tbpn2qv2satklala0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

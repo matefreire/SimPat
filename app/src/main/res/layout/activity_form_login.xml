@@ -20,20 +20,23 @@
         ></ImageView>
 
     <EditText
-        android:id="@+id/inputlogin"
+        android:id="@+id/inputemail"
         style="@style/input_text"
-        android:hint="Login"
+        android:hint="E-mail"
+        android:autofillHints="E-mail"
         android:maxLength="20"
         android:inputType="text"
         app:layout_constraintBottom_toTopOf="@+id/inputsenha"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"></EditText>
+        app:layout_constraintStart_toStartOf="parent"
+        ></EditText>
 
     <EditText
         android:id="@+id/inputsenha"
         style="@style/input_text"
         android:hint="Senha"
+        android:autofillHints="Senha"
         android:maxLength="20"
         android:inputType="textPassword"
         app:layout_constraintBottom_toTopOf="@+id/btn_login"

@@ -31,7 +31,7 @@
         android:textColor="@color/darkBlue"
         android:textSize="34sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/inputinfologin"
+        app:layout_constraintBottom_toTopOf="@+id/inputinfonome"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"></TextView>
 
@@ -48,16 +48,16 @@
         android:autofillHints="Informe o e-mail"></EditText>
 
     <EditText
-        android:id="@+id/inputinfologin"
+        android:id="@+id/inputinfonome"
         style="@style/input_text"
         android:layout_marginBottom="20dp"
-        android:hint="Informe o login"
+        android:hint="Informe o nome"
         android:inputType="text"
         android:maxLength="20"
         app:layout_constraintBottom_toTopOf="@+id/inputinfoemail"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:autofillHints="Informe o login"></EditText>
+        android:autofillHints="Informe o nome"></EditText>
 
     <EditText
         android:id="@+id/inputinfosenha1"
