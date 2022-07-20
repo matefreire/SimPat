@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/back_base"
-    tools:context=".FormCadastroUsuario">
+    tools:context=".CadastrarBem">
+
 
     <TextView
         android:id="@+id/titulo"
@@ -27,7 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="52dp"
         android:fontFamily="@font/roboto"
-        android:text="Cadastrar Usuário"
+        android:text="Cadastrar Bem"
         android:textColor="@color/darkBlue"
         android:textSize="34sp"
         android:textStyle="bold"
@@ -36,47 +37,47 @@
         app:layout_constraintStart_toStartOf="parent"></TextView>
 
     <EditText
-        android:id="@+id/inputinfoemail"
-        style="@style/input_text"
-        android:layout_marginBottom="20dp"
-        android:hint="Informe o e-mail"
-        android:inputType="textEmailAddress"
-        android:maxLength="20"
-        app:layout_constraintBottom_toTopOf="@+id/inputinfosenha1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:autofillHints="Informe o e-mail"></EditText>
-
-    <EditText
         android:id="@+id/inputinfologin"
         style="@style/input_text"
         android:layout_marginBottom="20dp"
-        android:hint="Informe o login"
+        android:autofillHints="Nome do Bem"
+        android:hint="Nome do Bem"
         android:inputType="text"
         android:maxLength="20"
         app:layout_constraintBottom_toTopOf="@+id/inputinfoemail"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:autofillHints="Informe o login"></EditText>
+        app:layout_constraintStart_toStartOf="parent"></EditText>
+
+    <EditText
+        android:id="@+id/inputinfoemail"
+        style="@style/input_text"
+        android:layout_marginBottom="20dp"
+        android:autofillHints="Código do Bem"
+        android:hint="Código do Bem"
+        android:inputType="number"
+        android:maxLength="6"
+        app:layout_constraintBottom_toTopOf="@+id/inputinfosenha1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"></EditText>
 
     <EditText
         android:id="@+id/inputinfosenha1"
         style="@style/input_text"
         android:layout_marginBottom="20dp"
-        android:hint="Informe a senha"
-        android:inputType="textPassword"
-        android:maxLength="20"
+        android:autofillHints="Localização"
+        android:hint="Localização"
+        android:inputType="text"
+        android:maxLength="50"
         app:layout_constraintBottom_toTopOf="@+id/inputinfosenha2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:autofillHints="Informe a senha"></EditText>
+        app:layout_constraintStart_toStartOf="parent"></EditText>
 
     <EditText
         android:id="@+id/inputinfosenha2"
         style="@style/input_text"
-        android:autofillHints="Informe a senha novamente"
-        android:hint="Informe a senha novamente"
-        android:inputType="textPassword"
+        android:autofillHints="Valor do Bem"
+        android:hint="Valor do Bem"
+        android:inputType="numberDecimal"
         android:maxLength="20"
         app:layout_constraintBottom_toTopOf="@+id/btncadastrar"
         app:layout_constraintEnd_toEndOf="parent"
@@ -88,14 +89,14 @@
 
         android:layout_marginBottom="60dp"
         android:text="Cadastrar"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toTopOf="@+id/textVoltar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        android:textAllCaps="false"/>
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textVoltar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="64dp"
@@ -105,8 +106,23 @@
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textLogout"
+        app:layout_constraintHorizontal_bias="0.463"
         app:layout_constraintStart_toStartOf="parent"></TextView>
+
+    <TextView
+        android:id="@+id/textLogout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="64dp"
+        android:fontFamily="@font/roboto"
+        android:text="Sair"
+        android:textColor="@color/darkBlue"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"></TextView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

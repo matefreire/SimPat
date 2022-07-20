@@ -1,0 +1,11 @@
+package br.com.ufmt.simpat
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+
+class ListaBem : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_lista_bem)
+    }
+}
