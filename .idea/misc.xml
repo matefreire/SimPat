@@ -3,6 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Luiz Henrique/StudioProjects/SimPat/app/src/main/res/layout/activity_form_cadastro_usuario.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Luiz Henrique/StudioProjects/SimPat/app/src/main/res/layout/activity_form_esqueceu_senha.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Luiz Henrique/StudioProjects/SimPat/app/src/main/res/layout/activity_form_login.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Luiz Henrique/StudioProjects/SimPat/app/src/main/res/layout/activity_home.xml" value="0.2798913043478261" />
+        <entry key="..\:/Users/Luiz Henrique/StudioProjects/SimPat/app/src/main/res/layout/activity_lista_bem.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/User/StudioProjects/SimPat/app/src/main/res/layout/activity_form_esqueceu_senha.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/User/StudioProjects/SimPat/app/src/main/res/layout/activity_form_login.xml" value="0.33" />
         <entry key="..\:/Users/User/StudioProjects/SimPat/app/src/main/res/layout/activity_home.xml" value="0.1675929884566054" />
