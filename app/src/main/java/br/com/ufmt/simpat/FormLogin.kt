@@ -19,6 +19,11 @@ import br.com.ufmt.simpat.FormCadastroUsuario as FormCadastroUsuario
 class FormLogin : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
+    private lateinit var txtSemConta:TextView
+    private lateinit var txtEsqueceuSenha:TextView
+    private lateinit var btnLogin:Button
+    private lateinit var editTxtEmail:EditText
+    private lateinit var editTxtSenha:EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,16 +34,18 @@ class FormLogin : AppCompatActivity() {
             // Initialize Firebase Auth
             auth = Firebase.auth
 
-        //Buscando informações da tela para validação e encaminhamento
-
-        val txtSemConta:TextView = findViewById(R.id.text_sem_conta)
-        val txtEsqueceuSenha:TextView = findViewById(R.id.text_esqueceu_senha)
-
-        val btnLogin:Button = findViewById(R.id.btn_login)
+        //Buscando compenentes na tela e alimentando variável global
+        txtSemConta = findViewById(R.id.text_sem_conta)
+        txtEsqueceuSenha = findViewById(R.id.text_esqueceu_senha)
+        btnLogin = findViewById(R.id.btn_login)
+        editTxtEmail = findViewById(R.id.inputemail)
+        editTxtSenha = findViewById(R.id.inputsenha)
 
         //Criando intenção para o login
         btnLogin.setOnClickListener {
-            autentica()
+            val possuiErro:Boolean = validaFormulario()
+            if (!possuiErro)
+                autentica()
         }
 
         //Criando intenção para o cadastro
@@ -54,42 +61,37 @@ class FormLogin : AppCompatActivity() {
         }
     }
 
-    public override fun onStart() {
-        super.onStart()
-        // Check if user is signed in (non-null) and update UI accordingly.
-        val currentUser = auth.currentUser
-        if (currentUser != null) {
-            reload();
-        }
-    }
-
     private fun sendEmailVerification() {
-        // [START send_email_verification]
         val user = auth.currentUser!!
         user.sendEmailVerification()
             .addOnCompleteListener(this) { task ->
-                // Email Verification sent
             }
-        // [END send_email_verification]
     }
 
-    private fun autentica(){
+    private fun validaFormulario(): Boolean {
+        var possuiErro:Boolean = false
 
-        val editTxtEmail:EditText = findViewById(R.id.inputemail)
-        val editTxtSenha:EditText = findViewById(R.id.inputsenha)
-        val intent = Intent(this@FormLogin, Home::class.java)
-
-        if (editTxtEmail.toString() == "" || editTxtSenha.toString() == "") {
-            Toast.makeText(applicationContext, "Os campos de login e senha são obrigatórios!", Toast.LENGTH_LONG).show()
-            //Criar Validações
+        if (editTxtEmail.text.isNullOrEmpty()) {
+            editTxtEmail.error = "O e-mail é obrigatório!"
+            possuiErro = true
         } else {
+            if (editTxtSenha.text.isNullOrEmpty()) {
+                editTxtSenha.error = "A senha é obrigatória!"
+                possuiErro = true
+            }
+        }
+        return possuiErro
+    }
 
-            startActivity(intent)
+    private fun autentica() {
+        val intent = Intent(this@FormLogin, Home::class.java)
+        auth.signInWithEmailAndPassword(editTxtEmail.text.toString(), editTxtSenha.text.toString()).addOnCompleteListener(this) { task ->
+            if (task.isSuccessful) {
+                Toast.makeText(baseContext, "Login realizado com sucesso!", Toast.LENGTH_LONG).show()
+                startActivity(intent)
+            } else {
+                Toast.makeText(baseContext, "Erro ao efetuar login!", Toast.LENGTH_LONG).show()
+            }
         }
     }
-
-    private fun reload() {
-
-    }
-
 }
