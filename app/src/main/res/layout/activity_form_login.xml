@@ -49,10 +49,10 @@
         style="@style/button_style"
         android:layout_marginBottom="144dp"
         android:text="Acessar"
+        android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
-        android:textAllCaps="false"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
