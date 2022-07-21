@@ -78,6 +78,7 @@ class FormLogin : AppCompatActivity() {
     }
 
     private fun autentica() {
+        Toast.makeText(baseContext, "Autenticando login", Toast.LENGTH_LONG).show()
         val intent = Intent(this@FormLogin, Home::class.java)
         auth.signInWithEmailAndPassword(editTxtEmail.text.toString(), editTxtSenha.text.toString()).addOnCompleteListener(this) { task ->
             if (task.isSuccessful) {

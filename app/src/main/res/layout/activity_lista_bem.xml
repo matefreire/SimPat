@@ -80,5 +80,20 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"></TextView>
 
+    <Button
+        android:id="@+id/cadastrar_bem"
+        style="@style/button_style"
+        android:layout_width="59dp"
+        android:layout_height="55dp"
+        android:layout_marginEnd="52dp"
+        android:layout_marginBottom="52dp"
+        android:hint="Cadastrar Bem"
+        android:autofillHints="Cadastrar Bem"
+        android:padding="5dp"
+        android:text="+"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/textLogout"
+        app:layout_constraintEnd_toEndOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

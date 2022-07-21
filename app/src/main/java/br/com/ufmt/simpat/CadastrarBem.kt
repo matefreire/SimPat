@@ -7,8 +7,25 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.CollectionReference
+import com.google.firebase.firestore.DocumentChange
+import com.google.firebase.firestore.DocumentSnapshot
+import com.google.firebase.firestore.FieldPath
+import com.google.firebase.firestore.FieldValue
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.FirebaseFirestoreException
+import com.google.firebase.firestore.FirebaseFirestoreSettings
+import com.google.firebase.firestore.MetadataChanges
+import com.google.firebase.firestore.Query
+import com.google.firebase.firestore.ServerTimestamp
+import com.google.firebase.firestore.SetOptions
+import com.google.firebase.firestore.Source
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.firestore.ktx.firestoreSettings
+import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
 
 class CadastrarBem : AppCompatActivity() {
@@ -24,6 +41,9 @@ class CadastrarBem : AppCompatActivity() {
     private lateinit var txtValor: EditText
     private lateinit var btnCadastrarBem: Button
 
+    //Firebase
+    private lateinit var db: FirebaseFirestore
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cadastrar_bem)
@@ -31,6 +51,8 @@ class CadastrarBem : AppCompatActivity() {
 
         auth = Firebase.auth
         val currentUser = auth.currentUser
+
+        db = Firebase.firestore
 
         if(currentUser != null){
             reload();
@@ -59,13 +81,29 @@ class CadastrarBem : AppCompatActivity() {
             val possuiErro:Boolean = validaFormulario()
             if (!possuiErro) {
                 cadastraBem()
-                voltarLogin()
+                val intent = Intent(this@CadastrarBem, ListaBem::class.java)
+                startActivity(intent)
             }
         }
     }
 
     private fun cadastraBem() {
-        TODO("Not yet implemented")
+
+        val dadosBem = hashMapOf(
+            "NomeBem" to txtNomeBem.text.toString(),
+            "CodigoBem" to txtCodigoBem.text.toString(),
+            "Localizacao" to txtLocalizacao.text.toString(),
+            "Valor" to txtValor.text.toString().toFloat()
+        )
+
+        db.collection("Bens")
+            .add(dadosBem)
+            .addOnSuccessListener { documentReference ->
+                Toast.makeText(baseContext, "Bem cadastrado com sucesso!", Toast.LENGTH_LONG).show()
+            }
+            .addOnFailureListener { e ->
+                Toast.makeText(baseContext, "Erro ao cadastrar o bem. Erro: $e", Toast.LENGTH_LONG).show()
+            }
     }
 
     private fun validaFormulario(): Boolean {

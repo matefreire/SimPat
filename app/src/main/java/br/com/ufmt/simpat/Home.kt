@@ -32,8 +32,13 @@ class Home : AppCompatActivity() {
         txtVoltarLogin = findViewById(R.id.textSair)
 
         //Criando intenção para voltar para Home
-        txtVoltarLogin.setOnClickListener {
+        txtVoltarLogin.setOnClickListener() {
             voltarLogin()
+        }
+
+        imageBem.setOnClickListener(){
+            val intent = Intent(this@Home, ListaBem::class.java)
+            startActivity(intent)
         }
     }
 
