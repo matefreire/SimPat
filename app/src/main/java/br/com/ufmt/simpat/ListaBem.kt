@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -16,6 +17,7 @@ class ListaBem : AppCompatActivity() {
     private lateinit var txtListaBemVoltarHome: TextView
     private lateinit var txtListaDeslogar: TextView
     private lateinit var btnCadastrarBem: Button
+    private lateinit var listagemBens: RecyclerView
     private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,6 +35,7 @@ class ListaBem : AppCompatActivity() {
         txtListaBemVoltarHome = findViewById(R.id.textVoltar)
         txtListaDeslogar = findViewById(R.id.textLogout)
         btnCadastrarBem = findViewById(R.id.cadastrar_bem)
+        listagemBens = findViewById(R.id.cadastrar_bem)
 
         btnCadastrarBem.setOnClickListener(){
             val intent = Intent(this@ListaBem, CadastrarBem::class.java)
@@ -49,6 +52,8 @@ class ListaBem : AppCompatActivity() {
         txtListaDeslogar.setOnClickListener {
             voltarLogin()
         }
+
+        //listagemBens.adapter(CustomAdapter)
     }
 
     private fun reload() {
