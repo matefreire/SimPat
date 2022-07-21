@@ -32,59 +32,59 @@
         android:textColor="@color/darkBlue"
         android:textSize="34sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/inputinfologin"
+        app:layout_constraintBottom_toTopOf="@+id/inputnomebem"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"></TextView>
 
     <EditText
-        android:id="@+id/inputinfologin"
+        android:id="@+id/inputnomebem"
         style="@style/input_text"
         android:layout_marginBottom="20dp"
         android:autofillHints="Nome do Bem"
         android:hint="Nome do Bem"
         android:inputType="text"
         android:maxLength="20"
-        app:layout_constraintBottom_toTopOf="@+id/inputinfoemail"
+        app:layout_constraintBottom_toTopOf="@+id/inputcodigobem"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"></EditText>
 
     <EditText
-        android:id="@+id/inputinfoemail"
+        android:id="@+id/inputcodigobem"
         style="@style/input_text"
         android:layout_marginBottom="20dp"
         android:autofillHints="Código do Bem"
         android:hint="Código do Bem"
         android:inputType="number"
         android:maxLength="6"
-        app:layout_constraintBottom_toTopOf="@+id/inputinfosenha1"
+        app:layout_constraintBottom_toTopOf="@+id/inputlocalizacao"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"></EditText>
 
     <EditText
-        android:id="@+id/inputinfosenha1"
+        android:id="@+id/inputlocalizacao"
         style="@style/input_text"
         android:layout_marginBottom="20dp"
         android:autofillHints="Localização"
         android:hint="Localização"
         android:inputType="text"
         android:maxLength="50"
-        app:layout_constraintBottom_toTopOf="@+id/inputinfosenha2"
+        app:layout_constraintBottom_toTopOf="@+id/inputvalorbem"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"></EditText>
 
     <EditText
-        android:id="@+id/inputinfosenha2"
+        android:id="@+id/inputvalorbem"
         style="@style/input_text"
         android:autofillHints="Valor do Bem"
         android:hint="Valor do Bem"
         android:inputType="numberDecimal"
         android:maxLength="20"
-        app:layout_constraintBottom_toTopOf="@+id/btncadastrar"
+        app:layout_constraintBottom_toTopOf="@+id/btncadastrarbem"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"></EditText>
 
     <Button
-        android:id="@+id/btncadastrar"
+        android:id="@+id/btncadastrarbem"
         style="@style/button_style"
 
         android:layout_marginBottom="60dp"

@@ -39,7 +39,7 @@ class FormCadastroUsuario : AppCompatActivity() {
         txtSenha2 = findViewById(R.id.inputinfosenha2)
 
         btnCadastrar.setOnClickListener(){
-            var possuiErro:Boolean = validaFormulario()
+            val possuiErro:Boolean = validaFormulario()
             if (!possuiErro) {
                 cadastraUsuario()
                 voltarLogin()

@@ -61,12 +61,6 @@ class FormLogin : AppCompatActivity() {
         }
     }
 
-    private fun sendEmailVerification() {
-        val user = auth.currentUser!!
-        user.sendEmailVerification()
-            .addOnCompleteListener(this) { task ->
-            }
-    }
 
     private fun validaFormulario(): Boolean {
         var possuiErro:Boolean = false
